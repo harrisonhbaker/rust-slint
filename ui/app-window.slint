@@ -1,0 +1,30 @@
+import { Button, VerticalBox } from "std-widgets.slint";
+
+export component MainWindow inherits Window {
+    height: 500px;
+    width: 500px;
+    GridLayout {
+        spacing: 5px;
+        Row {
+            Rectangle {
+                width: 200px;
+                height: 200px;
+                background: blue;
+                border-color: orange;
+                border-radius: 10px;
+                
+                Text {
+                    text: "hello world";
+                    color: green;
+                    font-size: 24px;
+                }
+            }
+        }
+        Row {
+            Rectangle { background: yellow; }
+            Rectangle { background: green; }
+        }
+        
+    }
+    
+}
