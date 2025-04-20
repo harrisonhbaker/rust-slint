@@ -21,8 +21,36 @@ export component MainWindow inherits Window {
             }
         }
         Row {
-            Rectangle { background: yellow; }
-            Rectangle { background: green; }
+            Rectangle { 
+                width: 200px;
+                height: 200px;
+                background: red; 
+                Button {
+                    in-out property <bool> is_clicked: false;
+                    in-out property <string> label_text: "";
+                    width: 200px;
+                    height: 200px;
+                    text: "click the button";
+                    clicked => {
+                        if (is_clicked) { 
+                            label_text= "the button is clicked";
+                        } else { 
+                            label_text= "the button is not clicked";
+                        }
+
+                        label.text = label_text;
+                        is_clicked= !is_clicked;
+
+                    }
+                }
+            }
+            Rectangle { 
+            background: green; 
+            label := Text { 
+                text: "not clicked";
+            }
+            
+        }
         }
         
     }
